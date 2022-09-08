@@ -11,8 +11,27 @@
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
 </head>
-<body class="w3-light-grey">
 
+<body class="w3-light-grey">
+<!-- Navbar (sit on top) -->
+<div class="cv-padding-6">
+  <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+          <i class="fa fa-bars"></i>
+      </a>
+      <a href="index.html" class="w3-bar-item w3-button">HOME</a>
+      <a href="cv.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file-text"></i> CV</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+      <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+      <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+      <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
@@ -24,18 +43,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="/assets/pictures/spencer-davis-PWe4-hI_Q0k-unsplash.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Ben Karabinus</h2>
-          </div>
+          <img src="/assets/pictures/Ben K Headshot.jpeg" style="width:100%" alt="Avatar">
+          <h2><center>Ben Karabinus</center></h2>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Information Technology Professional</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Denver, CO</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>benjaminkarabinus@gmail.com</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-black"></i>Information Technology Professional</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-black"></i>Denver, CO</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>benjaminkarabinus@gmail.com</p>
           <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills & Abilities</b></p>
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-black"></i>Skills & Abilities</b></p>
           <p>Technologies</p>
           <ul>
             <li>Microsoft Office Suite</li>
@@ -83,7 +100,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-twothird">
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-black"></i>Work Experience</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Product and Strategy  Senior Associate / RSM US, LLP</b></h5>
           <h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2020 - <span class="w3-text-gray">Current</span></h6>
@@ -101,7 +118,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       </div>
 
       <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-black"></i>Education</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>University of Denver, Ritchie School of Engineering and Computter Science</b></h5>
           <h6 class="w3-text-gray"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Graduating November 2022</h6>
@@ -140,6 +157,36 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <i class="fa fa-linkedin w3-hover-opacity"></i>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
+<script>
+  // Modal Image Gallery
+  function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+  }
+
+  // Change style of navbar on scroll
+  window.onscroll = function () { myFunction() };
+  function myFunction() {
+      var navbar = index.html.getElementById("myNavbar");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+      } else {
+          navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+      }
+  }
+
+  // Used to toggle the menu on small screens when clicking on the menu button
+  function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else {
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
+</script>
 
 </body>
 </html>
