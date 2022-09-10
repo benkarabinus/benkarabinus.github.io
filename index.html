@@ -77,22 +77,21 @@
 
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
+        <div class="w3-bar w3-black" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
                 href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-bars w3-bar-text"></i>
             </a>
-            <a href="index.html" class="w3-bar-item w3-button">HOME</a>
-            <a href="cv.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file-text"></i>CV</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+            <a href="index.html" class="w3-bar-item w3-bar-text w3-button">HOME</a>
+            <a href="cv.html" class="w3-bar-item w3-bar-text w3-button w3-hide-small"><i class="fa fa-file-text"></i>CV</a>
+            <a href="#contact" class="w3-bar-item w3-bar-text w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
         </div>
 
         <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-            <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+        <div id="navDemo" class="w3-bar-block w3-bar w3-hide w3-hide-large w3-hide-medium">
+            <a href="index.html" class="w3-bar-item w3-bar-text w3-button">HOME</a>
+            <a href="cv.html" class="w3-bar-item w3-bar-text w3-button">CV</a>
+            <a href="#contact" class="w3-bar-item w3-bar-text w3-button" onclick="toggleFunction()">CONTACT</a>
         </div>
     </div>
 
@@ -247,9 +246,9 @@
         function myFunction() {
             var navbar = document.getElementById("myNavbar");
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
             } else {
-                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", "");
             }
         }
 
